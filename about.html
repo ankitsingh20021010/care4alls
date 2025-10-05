@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Care4Alls — NGO</title>
+  <meta name="description" content="Learn about Care4Alls, our mission, vision, values, and impact." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" href="assets/images/favicon.ico" />
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header id="site-header" class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="Care4Alls home">
+        <img src="assets/images/logo.png" alt="Care4Alls logo" class="logo" />
+        <span class="brand-text">Care4Alls</span>
+      </a>
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        ☰
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" role="navigation">
+        <ul class="nav-list nav-links">
+          <li><a href="index.html#home" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="index.html#programs" class="nav-link">Programs</a></li>
+          <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+          <li><a href="index.html#impact" class="nav-link">Impact</a></li>
+          <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="index.html#events" class="nav-link">Events</a></li>
+          <li><a href="index.html#volunteer" class="nav-link">Volunteer</a></li>
+          <li><a href="index.html#donate" class="nav-link cta">Donate</a></li>
+          <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN ABOUT SECTION -->
+  <main>
+    <section id="about" class="about container" role="region" aria-labelledby="about-title">
+      <h2 id="about-title">About Care4Alls</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p><strong>Mission:</strong> Humara mission hai education, health, aur livelihood ke zariye communities ko self-reliant banana.</p>
+          <p><strong>Vision:</strong> Har baccha school jaye, har family ko basic health services milen, aur log apni rozi-roti khud kama sakein.</p>
+          <h3>Core values</h3>
+          <ul>
+            <li>Transparency</li>
+            <li>Community-led approach</li>
+            <li>Impact-driven programs</li>
+          </ul>
+        </div>
+        <div class="about-stats">
+          <div class="stat">
+            <div class="stat-number">1,200+</div>
+            <div class="stat-label">Beneficiaries in 2024</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">85</div>
+            <div class="stat-label">Health camps</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">300+</div>
+            <div class="stat-label">Volunteers</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="history">
+        <h4>Our journey</h4>
+        <ol>
+          <li><strong>2018:</strong> Organization established</li>
+          <li><strong>2019:</strong> First medical camp — 300 beneficiaries</li>
+          <li><strong>2021:</strong> Launched scholarship program</li>
+          <li><strong>2023:</strong> Reached 10,000 total beneficiaries</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/images/logo.png" alt="Care4Alls logo" />
+        <p>Care4Alls — Empowering communities through education, health & livelihood.</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick links</h4>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#reports">Reports</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: <a href="mailto:info@yourdomain.com">info@yourdomain.com</a></p>
+        <p>Phone: +91-XXXXXXXXXX</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom container">
+      <p>&copy; <span id="ft-year"></span> Care4Alls. All rights reserved.</p>
+      <p class="credits">Designed by Care4Alls Team</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/script.js"></script>
+  <script>
+    // Update footer year
+    document.getElementById('ft-year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const primaryNav = document.getElementById('primary-nav');
+    navToggle?.addEventListener('click', () => {
+      const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', String(!expanded));
+      primaryNav.classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

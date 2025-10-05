@@ -1,0 +1,504 @@
+/* ================================
+   NGO Website – style.css
+   Author: Ankit Singh
+   Updated: Clean professional layout
+   ================================ */
+/* HEADER LOGO */
+header .logo {
+  width: 60px;      /* normal size */
+  height: 60px;     /* maintain square ratio */
+  object-fit: contain; /* scale logo without cutting */
+}
+
+/* Optional: brand text next to logo */
+header .brand-text {
+  font-size: 1.5rem;
+  margin-left: 10px;
+  color: #0a3d62; /* dark text for white navbar */
+  font-weight: 700;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  header .logo {
+    width: 40px;
+    height: 40px;
+  }
+  header .brand-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ================================
+   HEADER & NAVIGATION
+   ================================ */
+header {
+  background-color: #fff; /* white background */
+  color: #0a3d62;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+header.scrolled {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+header .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 15px 20px;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #0a3d62;
+  text-decoration: none;
+}
+
+header .logo img {
+  max-height: 50px;
+  margin-right: 10px;
+}
+
+.primary-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #0a3d62;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.nav-list li a:hover,
+.nav-list li a.cta {
+  background-color: #fbc531;
+  color: #fff;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
+.hero {
+  background: url("../images/hero-bg.jpg") center/cover no-repeat;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  padding: 0 20px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10,61,98,0.5);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn-primary,
+.hero .btn-outline {
+  display: inline-block;
+  padding: 12px 25px;
+  margin: 5px;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #fbc531;
+  color: #0a3d62;
+}
+
+.btn-primary:hover {
+  background: #ffd65a;
+}
+
+.btn-outline {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #0a3d62;
+}
+
+/* ================================
+   SECTIONS (ABOUT, PROGRAMS, PROJECTS)
+   ================================ */
+section {
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ABOUT */
+.about h2, .programs h2, .projects h2 {
+  color: #0a3d62;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.about-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+.about-stats .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fbc531;
+}
+
+.about-stats .stat-label {
+  font-weight: 500;
+}
+
+/* PROGRAMS */
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 25px;
+}
+
+.program-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card h3 {
+  margin-bottom: 15px;
+  color: #0a3d62;
+}
+
+.program-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* PROJECTS */
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 25px;
+}
+
+.project-item {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-item:hover {
+  transform: translateY(-5px);
+}
+
+.project-thumb {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-body {
+  padding: 15px;
+}
+
+/* GALLERY */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+  gap: 15px;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+#lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  background: #0a3d62;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #fbc531;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffd65a;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width:1024px){
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width:768px){
+  .nav-list {
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+  }
+
+  .nav-list.nav-active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+/* ================================
+   Volunteer Page – style.css
+   Author: Ankit Singh
+   Updated: Volunteer form design
+   ================================ */
+
+/* ================================
+   FORM SECTION
+   ================================ */
+.volunteer {
+  background: #fff;
+  border-radius: 10px;
+  padding: 50px 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 50px auto;
+}
+
+.volunteer h2 {
+  text-align: center;
+  color: #0a3d62;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.volunteer p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+#volunteer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#volunteer-form input,
+#volunteer-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+#volunteer-form input:focus,
+#volunteer-form textarea:focus {
+  outline: none;
+  border-color: #fbc531;
+  box-shadow: 0 0 5px rgba(251, 197, 49, 0.5);
+}
+
+#volunteer-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+#volunteer-form button {
+  padding: 15px;
+  border: none;
+  background: #fbc531;
+  color: #0a3d62;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#volunteer-form button:hover {
+  background: #ffd65a;
+}
+
+/* Form submission message */
+.form-message {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+@media (max-width: 768px) {
+  .volunteer {
+    padding: 40px 15px;
+  }
+
+  .volunteer h2 {
+    font-size: 1.8rem;
+  }
+
+  .volunteer p {
+    font-size: 1rem;
+  }
+
+  #volunteer-form button {
+    font-size: 1rem;
+    padding: 12px;
+  }
+}

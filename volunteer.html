@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Volunteer - Care4Alls</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("YOUR_EMAILJS_USER_ID"); // yahan apna EmailJS user ID daalein
+    })();
+  </script>
+</head>
+<body>
+
+  <section id="volunteer" class="volunteer container">
+    <h2>Become a Volunteer</h2>
+    <p>Join our mission and make a real difference in your community!</p>
+
+    <form id="volunteer-form">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="tel" name="phone" placeholder="Phone Number">
+      <input type="text" name="skills" placeholder="Skills / Interests">
+      <textarea name="message" placeholder="Short message / Why do you want to volunteer?"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="form-message" class="form-message"></div>
+  </section>
+
+  <script>
+    const form = document.getElementById('volunteer-form');
+    const msgDiv = document.getElementById('form-message');
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+
+      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+        .then(() => {
+          msgDiv.textContent = "Thank you! Your submission has been received.";
+          msgDiv.style.color = "green";
+          form.reset();
+        }, (error) => {
+          msgDiv.textContent = "Oops! Something went wrong. Please try again.";
+          msgDiv.style.color = "red";
+        });
+    });
+  </script>
+
+</body>
+</html>
